@@ -41,7 +41,6 @@ O algoritmo Chu-Liu/Edmonds é um método para encontrar uma arborescência mín
 
 No código fornecido, a função `arborescence` implementa este algoritmo. Ela usa estruturas de dados como vetores para armazenar as melhores arestas de entrada (`in`) e para controlar a contração dos ciclos (`C` e `mark`). A cada iteração, o algoritmo atualiza essas estruturas até encontrar uma arborescência ou determinar que uma arborescência não pode ser formada.
 
-
 ## Conclusão da Execução do Algoritmo com Análise Estatística dos Resultados
 
 Após a execução do algoritmo Chu-Liu/Edmonds em uma série de grafos aleatórios, podemos chegar a algumas conclusões importantes, tanto qualitativas quanto quantitativas:

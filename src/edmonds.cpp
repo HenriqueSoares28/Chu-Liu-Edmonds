@@ -133,26 +133,31 @@ double tick()
     return diff;
 }
 
-int main() {
+int main()
+{
 
-    std::ofstream outfile("log.csv"); // Cria e abre um arquivo CSV
-    outfile << "nVertex,arborescence,time\n"; // Escreve o cabeçalho do CSV
+    std::ofstream outfile("edmondsLog.csv");    // Cria e abre um arquivo CSV
+    outfile << "seed,nVertex,arborescence,time\n"; // Escreve o cabeçalho do CSV
 
-    for (int q = 0; q < 1000; ++q) {
+    int qt = 1000; // Quantidade de testes
+    int n = 500; // Número de vértices do grafo
+    int wMax = 100; // Peso máximo das arestas 
+
+    for (int q = 0; q < qt; ++q)
+    {
         srand(q);
 
-        int n = 1000; // Número de vértices
         graph g(n);
 
-        for (int i = 0; i < n; ++i) {
-            int qt = 1 + rand() % 100; // Número de arestas que saem do vértice i
-            for (int k = 0; k < qt; ++k) {
-                int j;
-                do {
-                    j = rand() % n;
-                } while (i == j);
-                int w = 1 + rand() % 1000;
-                g.add_edge(i, j, w);
+        // Geração do grafo com n vértices e adição de arestas aleatórias
+        for (int i = 0; i < n; ++i)
+        {
+            for (int j = 0; j < i; ++j)
+            {
+                if (rand() % 5 == 0)
+                    g.add_edge(i, j, 1 + rand() % wMax);
+                if (rand() % 5 == 0)
+                    g.add_edge(j, i, 1 + rand() % wMax);
             }
         }
 
@@ -161,7 +166,7 @@ int main() {
         double elapsed = tick();
 
         // Escreve os resultados no arquivo CSV
-        outfile << n << "," << b << "," << elapsed << "\n";
+        outfile << q << "," << n << "," << b << "," << elapsed << "\n";
     }
 
     outfile.close(); // Fecha o arquivo
