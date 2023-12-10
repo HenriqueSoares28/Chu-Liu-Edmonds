@@ -65,7 +65,8 @@ Estas observações, juntamente com a análise estatística, fornecem uma visão
 
 ### Referências
 
-- [O código é baseado nos trabalhos de Y. J. Chu e T. H. Liu (1965) e J. Edmonds (1967) sobre arborescências mínimas em grafos direcionados.](https://github.com/spaghetti-source/algorithm/blob/master/graph)
+- O código é baseado nos trabalhos de Y. J. Chu e T. H. Liu (1965) e J. Edmonds (1967) sobre arborescências mínimas em grafos direcionados.
+- [Alteração no código escrito por Takanori MAEHARA](https://github.com/spaghetti-source/algorithm/blob/master/graph)
 
 ### Notas Adicionais
 
